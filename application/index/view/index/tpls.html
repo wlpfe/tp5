@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TPLS</title>
+</head>
+<body>
+{volist name="data" id="val" empty="没有数据哦" key='k'}
+<p>{$key}:{$k}:{$val.name}</p>
+{/volist}
+<!--{volist name="data" id="val" offset="2" length="2"}
+<p>{$key}:{$val.name}</p>
+{/volist}-->
+<!--{volist name="data" id="val" mod=2}
+{eq name="mod" value="0"}
+<p style="color: red">{$key}:{$val.name}</p>
+{/eq}
+{eq name="mod" value="1"}
+<p style="color: blue">{$key}:{$val.name}</p>
+{/eq}
+{/volist}-->
+{foreach name="data" item="val" key="a"}
+<p>{$a}:{$val.name}</p>
+{/foreach}
+
+{for start="0" end="10" comparison='elt' step='2' name='j'}
+<p>{$j}</p>
+{/for}
+
+{for start="10" end="0" comparison='gt' step='-1' name='i'}
+<p>{$i}</p>
+{/for}
+{eq name='i' value='0'}正确{/eq} <!--比较标签 参考手册-->
+<p>if else</p>
+{if condition="$ma==$ma1"}
+相等
+{else}
+不相等
+{/if}
+<p>switch</p>
+{switch name='week'}
+    {case value='1'}周一{/case}
+{case value='2'}周二{/case}
+{case value='3'}周三{/case}
+{case value='4'}周四{/case}
+{case value='5'}周五{/case}
+{case value='6'}周六{/case}
+{default /}周日
+{/switch}
+
+<p>in</p>
+{in name='ma' value="10,11,12"}
+10在里面
+{/in}
+{notin name='ma' value="15,11,12"}
+10不在里面
+{/notin}
+<hr>
+{between name='ma' value="1,100"}
+在1~100
+{else/}
+不在
+{/between}
+<p>原生PHP</p>
+<?php
+    echo $ma;
+?>
+<hr>
+{php}
+    echo $ma1;
+{/php}
+{if $ma==$ma1}
+123123
+{/if}
+</body>
+</html>

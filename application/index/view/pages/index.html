@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pages</title>
+</head>
+<body>
+<!--{volist name="lists" id="item"}
+    <p>{$item.fromname}:{$item.content}</p>
+{/volist}
+{$lists->render()}-->
+
+{volist name='lists' id="item"}
+<p>{$item.fromname}:{$item.content}</p>
+<p>nickname:{//$item.nickname}</p>
+{/volist}
+<p>{$page}</p>
+<p><div>{:captcha_img()}</div></p>
+<hr>
+<form name="upload" method="post" action="{:url('uploads')}" enctype="multipart/form-data">
+    <input type="file" name="image[]"><br>
+    <input type="file" name="image[]"><br>
+    <input type="submit" value="上传">
+</form>
+</body>
+</html>

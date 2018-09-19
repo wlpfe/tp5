@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tp5</title>
+    <script src="__STATIC__/jquery.min.js"></script>
+    <script>
+        $.post("{:url('rqt2')}");
+    </script>
+</head>
+<body>
+<div>hello world!</div>
+<div>
+<form action="{:url('guolu')}" method="post">
+    <p>User:<input type="text" name="username" ></p>
+    <p>message:<textarea name="message"></textarea></p>
+    <p><input type="submit" value="提交"></p>
+    <p></p>
+</form>
+</div>
+</body>
+</html>

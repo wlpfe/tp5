@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>{$str}</p>
+<p>{$r.name}</p>
+<p>{$r['name']}</p>
+{for start="1" end="10"}
+<p>{$i|md5}</p>
+{/for}
+<p>{$t|date="Y-m-d H:i:s",###}</p>
+<p>{:date('Y-m-d H:i:s',$t)}</p>
+<p>{$str|default='hello'}</p>
+{literal}
+<p>{$t}</p>
+{/literal}
+<p>系统变量</p>
+<p>{$_GET['id']}</p>
+<p>{$Think.get.id}</p>
+<p>{$Think.server.http_host}</p>
+<p>常量输出</p>
+<p>{$Think.const.ds}</p>
+<p>{$Think.const.think_path}</p>
+<p>配置文件输出</p>
+<p>{$Think.config.app_debug}</p>
+<p>Request</p>
+<p>{$Request.get.name}</p>
+<p>{$Request.param.name}</p>
+{/*模板注释*/}
+{//include file="public/footer"}
+</body>
+</html>
